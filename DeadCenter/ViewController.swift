@@ -26,7 +26,16 @@ class ViewController: UIViewController {
 
     
     @IBAction func showAlert() {
-        let message = "current value is: \(currentValue)" + "\nthe target value is: \(targetValue)"
+        var difference: Int
+        if currentValue > targetValue {
+            difference = currentValue - targetValue
+        } else if targetValue > currentValue {
+            difference = targetValue - currentValue
+        } else {
+            difference = 0
+        }
+        
+        let message = "current value is: \(currentValue)" + "\nthe target value is: \(targetValue)" + "\nThe difference is \(difference)"
         let alert = UIAlertController(title: "Heylo World", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
