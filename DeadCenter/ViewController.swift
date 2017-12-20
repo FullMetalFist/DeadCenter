@@ -10,13 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var currentValue: Int = 50
+    var currentValue = 50
     
-    var targetValue: Int = 0
+    var targetValue = 0
+    
+    var score = 0
+    
+    var round = 0
     
     @IBOutlet weak var slider: UISlider!
     
     @IBOutlet weak var targetLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var roundLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +34,14 @@ class ViewController: UIViewController {
 
     
     @IBAction func showAlert() {
-        var difference: Int
-        if currentValue > targetValue {
-            difference = currentValue - targetValue
-        } else if targetValue > currentValue {
-            difference = targetValue - currentValue
-        } else {
-            difference = 0
-        }
+        let difference = abs(targetValue - currentValue)
         
-        let message = "current value is: \(currentValue)" + "\nthe target value is: \(targetValue)" + "\nThe difference is \(difference)"
+        let points = 100 - difference
+        
+        let message = "You scored \(points) points"
+        
+        score += points
+        
         let alert = UIAlertController(title: "Heylo World", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
@@ -50,6 +56,7 @@ class ViewController: UIViewController {
     }
     
     func startNewRound() {
+        round += 1
         targetValue = 1 + Int(arc4random_uniform(100))
         slider.value = Float(currentValue)
         updateLabels()
@@ -57,6 +64,10 @@ class ViewController: UIViewController {
     
     func updateLabels() {
         targetLabel.text = String(targetValue)
+        scoreLabel.text = String(score)
+        roundLabel.text = String(round)
     }
 }
 
+//exercise
+// the least you can have is 1 point because if the random number lands on a 1 or 100, and you are off, the furthest from there will be 99 values.
