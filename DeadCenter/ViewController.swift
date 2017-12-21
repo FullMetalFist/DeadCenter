@@ -29,25 +29,43 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        startNewRound()
+        startNewGame()
     }
 
     
     @IBAction func showAlert() {
         let difference = abs(targetValue - currentValue)
         
-        let points = 100 - difference
+        var points = 100 - difference
+        
+        let title: String
+        
+        switch difference {
+        case 0:
+            title = "Perfect!"
+            points += 100
+        case 1...5:
+            title = "Almost there!"
+            if difference == 1 {
+                points += 50
+            }
+        case 6...10:
+            title = "Pretty good!"
+        default:
+            title = "Not even close."
+        }
         
         let message = "You scored \(points) points"
         
         score += points
         
-        let alert = UIAlertController(title: "Heylo World", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: {
+            action in
+            self.startNewRound()
+        })
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
-        startNewRound()
     }
     
     @IBAction func sliderMoved(_ slider: UISlider) {
@@ -62,12 +80,15 @@ class ViewController: UIViewController {
         updateLabels()
     }
     
+    @IBAction func startNewGame() {
+        score = 0
+        round = 0
+        startNewRound()
+    }
+    
     func updateLabels() {
         targetLabel.text = String(targetValue)
         scoreLabel.text = String(score)
         roundLabel.text = String(round)
     }
 }
-
-//exercise
-// the least you can have is 1 point because if the random number lands on a 1 or 100, and you are off, the furthest from there will be 99 values.
