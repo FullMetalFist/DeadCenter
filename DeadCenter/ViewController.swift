@@ -46,11 +46,13 @@ class ViewController: UIViewController {
         case 0:
             title = "Perfect!"
             points += 100
+            break
         case 1...5:
             title = "Almost there!"
             if difference == 1 {
                 points += 50
             }
+            break
         case 6...10:
             title = "Pretty good!"
         default:

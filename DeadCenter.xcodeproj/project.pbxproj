@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C6286EE1FEED67A00793DF4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6286ED1FEED67A00793DF4 /* AboutViewController.swift */; };
+		7C6286F01FEEED5200793DF4 /* DeadCenter.html in Resources */ = {isa = PBXBuildFile; fileRef = 7C6286EF1FEEED5200793DF4 /* DeadCenter.html */; };
 		7CAAC76E1FD1C2B800025A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAC76D1FD1C2B800025A19 /* AppDelegate.swift */; };
 		7CAAC7701FD1C2B800025A19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAC76F1FD1C2B800025A19 /* ViewController.swift */; };
 		7CAAC7731FD1C2B800025A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAC7711FD1C2B800025A19 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C6286ED1FEED67A00793DF4 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7C6286EF1FEEED5200793DF4 /* DeadCenter.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DeadCenter.html; sourceTree = "<group>"; };
 		7CAAC76A1FD1C2B800025A19 /* DeadCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeadCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAAC76D1FD1C2B800025A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CAAC76F1FD1C2B800025A19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +60,9 @@
 			children = (
 				7CAAC76D1FD1C2B800025A19 /* AppDelegate.swift */,
 				7CAAC76F1FD1C2B800025A19 /* ViewController.swift */,
+				7C6286ED1FEED67A00793DF4 /* AboutViewController.swift */,
 				7CAAC7711FD1C2B800025A19 /* Main.storyboard */,
+				7C6286EF1FEEED5200793DF4 /* DeadCenter.html */,
 				7CAAC7741FD1C2B800025A19 /* Assets.xcassets */,
 				7CAAC7761FD1C2B800025A19 /* LaunchScreen.storyboard */,
 				7CAAC7791FD1C2B800025A19 /* Info.plist */,
@@ -124,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CAAC7781FD1C2B800025A19 /* LaunchScreen.storyboard in Resources */,
+				7C6286F01FEEED5200793DF4 /* DeadCenter.html in Resources */,
 				7CAAC7751FD1C2B800025A19 /* Assets.xcassets in Resources */,
 				7CAAC7731FD1C2B800025A19 /* Main.storyboard in Resources */,
 			);
@@ -136,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C6286EE1FEED67A00793DF4 /* AboutViewController.swift in Sources */,
 				7CAAC7701FD1C2B800025A19 /* ViewController.swift in Sources */,
 				7CAAC76E1FD1C2B800025A19 /* AppDelegate.swift in Sources */,
 			);
